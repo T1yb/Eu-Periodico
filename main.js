@@ -13,10 +13,10 @@ var elementos = [
 ]
 
 var pergunta = [
-    'roberto',
-    'foi',
-    'fjfrh',
-    'isso ai'
+    '???',
+    '???',
+    '???',
+    '???'
 ]
 function radom(){
     element1 = Math.floor(elementos.length * Math.random());
