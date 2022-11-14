@@ -62,7 +62,6 @@ bt2.addEventListener('click',()=>{
 })
 back.addEventListener('click',()=>{
     if(vusu1 == true & vusu2 == true) {
-        titulo.style.marginTop = "25vh"
         bt1.style.display = 'none'
         bt2.style.display = 'none'
         back.style.display = 'none'
