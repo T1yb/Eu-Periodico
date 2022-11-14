@@ -51,5 +51,6 @@
     display: block;
     top: 50%;
     width: 100vw;
+    height: 100vh;
     margin: -25px auto -25px auto;
 }
