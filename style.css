@@ -47,10 +47,7 @@
 }
 #ag {
     display: block;
-    font-size: 5cm;
-    margin-top: 16%;
-    text-align: center;
-    font-family: 'Poor Story', cursive;
-    color: #005C51;
-    
+    top: 50%;
+    width: 80%;
+    margin: -25px auto -25px auto;
 }
