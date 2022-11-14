@@ -35,7 +35,7 @@ setTimeout(function(){
     bt1.style.display = 'inline-block'
     bt2.style.display = 'inline-block'
     ag.style.display = 'none'
-},2500);
+},5000);
 bt1.addEventListener('click',()=>{
     if(vusu1 == true){
         bt1.style.backgroundColor = '#D1F5F1'
