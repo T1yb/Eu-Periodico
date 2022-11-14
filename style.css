@@ -7,14 +7,14 @@
 #titulo {
     color: #005C51;
     font-size: 3cm;
-    display: block;
+    display: none;
     text-align: center;
     font-family: 'Poor Story', cursive;
 }
 .bt {
     display: none;
-    height: 19.3cm;
-    width: 49.8%;
+    width: 49.8vw;
+    height: 100vh;
 }
 #bt1 {
     background-color: #FF001B;
@@ -23,11 +23,12 @@
     background-color: #4D70FF;
 }
 .pt {
-    display: block;
-    text-align: center;
-    margin-top: 5cm;
-    font-size:5cm;
-    color: #000000;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+#pt2 {
+    left: 75%;
 }
 #back {
     display: none;
@@ -40,6 +41,7 @@
 #nx {
     display: none;
     width: 6cm;
+    padding-top: 30px;
     height: 6cm;
     margin: -25px auto -25px auto;
 }
