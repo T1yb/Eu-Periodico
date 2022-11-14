@@ -35,6 +35,7 @@ setTimeout(function(){
     bt1.style.display = 'inline-block'
     bt2.style.display = 'inline-block'
     ag.style.display = 'none'
+    titulo.style.display = 'block'
 },5000);
 bt1.addEventListener('click',()=>{
     if(vusu1 == true){
@@ -70,7 +71,7 @@ back.addEventListener('click',()=>{
     }else{
     bt1.style.display = 'inline-block'
     bt2.style.display = 'inline-block'
-    titulo.style.display = 'none'
+    titulo.innerHTML = 'Qual e seu lado?'
     back.style.display = 'none'
     if(vusu2 == true){
         bt2.style.backgroundColor = '#D1F5F1'
