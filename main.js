@@ -36,7 +36,7 @@ setTimeout(function(){
     bt1.style.display = 'inline-block'
     bt2.style.display = 'inline-block'
     ag.style.display = 'none'
-},3000);
+},2600);
 bt1.addEventListener('click',()=>{
     if(vusu1 == true){
         bt1.style.backgroundColor = '#D1F5F1'
@@ -63,6 +63,7 @@ bt2.addEventListener('click',()=>{
 })
 back.addEventListener('click',()=>{
     if(vusu1 == true & vusu2 == true) {
+        titulo.style.marginTop = "5%"
         bt1.style.display = 'none'
         bt2.style.display = 'none'
         back.style.display = 'none'
