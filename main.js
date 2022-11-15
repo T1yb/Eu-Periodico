@@ -25,7 +25,7 @@ function radom(){
         radom()
     }
 }
-var rodada = 1
+var rodada = 1,rodj = 0
 var bt1 = document.getElementById('bt1'),bt2 = document.getElementById('bt2'),ag = document.getElementById('ag')
 var titulo = document.getElementById('titulo'),back = document.getElementById('back'),nx = document.getElementById('nx')
 var vusu1 = false,vusu2 = false
@@ -87,15 +87,28 @@ nx.addEventListener('click',()=>{
     play()
 })
 function play() {
-    if (rodada == 1){
-        rodada = 2
-        fundo.style.backgroundColor = '#FF001B'
-        perguntan = Math.floor(pergunta.length * Math.random());
-        titulo.innerHTML = `${pergunta[perguntan]}`
-    }else if (rodada == 2){
-        rodada = 1
-        fundo.style.backgroundColor = '#4D70FF'
-        perguntan = Math.floor(pergunta.length * Math.random());
-        titulo.innerHTML = `${pergunta[perguntan]}`
+    if (rodj == 20){
+        var resposta = prompt("qual elemento ele e?")
+        if (resposta == element1){
+            alert("acertou!!!")
+        }else if (resposta == element2){
+            alert("acertou!!!")
+        }else {
+            alert("voce errou!!!")
+        }
+    }else {
+        rodj = rodj + 1
+        console.log(rodj)
+        if (rodada == 1){
+            rodada = 2
+            fundo.style.backgroundColor = '#FF001B'
+            perguntan = Math.floor(pergunta.length * Math.random());
+            titulo.innerHTML = `${pergunta[perguntan]}`
+        }else if (rodada == 2){
+            rodada = 1
+            fundo.style.backgroundColor = '#4D70FF'
+            perguntan = Math.floor(pergunta.length * Math.random());
+            titulo.innerHTML = `${pergunta[perguntan]}`
+        }
     }
 }
