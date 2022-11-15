@@ -29,7 +29,7 @@ body {
 #comojogar {
     height: 45vh;
     border-radius: 10px;
-    left:21cm;
+    margin-left: 2%;
     width: 25%;
     background-color: white;
     display: inline-block;
