@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +8,49 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
-<body id="fundo">
-    <img id="ag" src="imgs/logo.gif"></img>
-    <div id="cc"><h1 id="titulo">Qual e seu lado?</h1></div>
-    
-        <div class="bt" id="bt1"></div>
-        <div class="bt" id="bt2"></div>
+<body>
+    <div id="config">
+        <div class="area">
+            <h1 id="logo">UP</h1>
+            <div id="menu"></div>
+            <div id="comojogar"></div>
+            <button class="bb" id="play">play</button>
+        </div>
+    </div>
+    <div id="tela-de-escolha">
+        <div class="area">
+            <h1 id="titulo">Seu Elemento e ...</h1>
+            
+            <div id="bts">
+            <button class="bt" id="bt1">1</button>
+            <button class="bt" id="bt2">2</button> 
+            </div>
 
-    <img src="imgs/left-return-arrow.png" alt="" id="back">
-    <img src="imgs/R.png" alt="" id="nx">
+            <button class="bb" id="bbb">INICIAR</button>
+        </div>
+    </div>
+    <div id="vendo-elemento">
+        <div class="area">
+            <h1 id="elem">Seu Elemento e ...</h1>
+            <div id="fundodic">
+            <h2 id="elemnome">???</h2>
+            <p id="discri-ele">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, atque soluta similique quaerat voluptatum quos ratione sit sed ad. Laudantium modi qui at quis ea culpa dolor aspernatur dolorum quas!</p>
+            </div>
+            <button class="bb" id="voltar">voltar</button>
+        </div>
+    </div>
+    <div id="jogo">
+        <div class="area">
+            <div id="ladop">
+                <h1 id="pergunta">uma pergunta</h1>
+                <img src="imgs/next.png" alt="" id="next">
+            </div>
+            <div id="img"></div>
+            <input type="text" id="chute"  maxLength="2">
+            <img src="imgs/nt.png" alt="" id="gol">
+
+        </div>
+    </div>
+    </div>
 </body>
-<script src="main.js"></script>
 </html>
