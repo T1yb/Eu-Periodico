@@ -1,4 +1,22 @@
-var elementos = [
+var config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2"),bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
+play.addEventListener('click', ()=> {
+    config.style.display = "none"
+    teladeescolha.style.display = "block"
+})
+bt1.addEventListener('click', ()=> {
+    vendoelemento.style.display = "block"
+    teladeescolha.style.display = "none"
+})
+bt2.addEventListener('click', ()=> {
+    vendoelemento.style.display = "block"
+    teladeescolha.style.display = "none"
+})
+voltar.addEventListener('click', ()=> {
+    teladeescolha.style.display = "block"
+    vendoelemento.style.display = "none"
+})
+
+/*var elementos = [
 'Lítio',
 'sódio',
 'potássio',
@@ -112,3 +130,4 @@ function play() {
         }
     }
 }
+*/
