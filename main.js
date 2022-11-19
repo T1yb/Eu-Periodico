@@ -1,20 +1,85 @@
-var config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2"),bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
+// pegar valores
+var nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv"),config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2"),bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
+// troca de pagina
 play.addEventListener('click', ()=> {
+    var vermelhop= document.getElementById("vermelho"),azulp= document.getElementById("azul")
+    var vermelho = vermelhop.value,azul= azulp.value
+    if (vermelho == "") {
+    }else {
+        nometv.innerHTML = `${vermelho}`
+    }
+    if (azul == "") {
+    }else {
+        nometa.innerHTML = `${azul}`
+    }
     config.style.display = "none"
     teladeescolha.style.display = "block"
+    radom()
 })
 bt1.addEventListener('click', ()=> {
-    vendoelemento.style.display = "block"
-    teladeescolha.style.display = "none"
+    ver1()
 })
 bt2.addEventListener('click', ()=> {
-    vendoelemento.style.display = "block"
-    teladeescolha.style.display = "none"
+    ver2()
 })
 voltar.addEventListener('click', ()=> {
     teladeescolha.style.display = "block"
     vendoelemento.style.display = "none"
 })
+//codigo 
+
+    // pagina de ver o elemento
+    var elem = document.getElementById("elem"),elemnome = document.getElementById("elemnome")
+    var vusu1 = false,vusu2 = false
+    var elementos = [
+        {nome: 'Lítio'},
+        {nome: 'sódio'},
+        {nome: 'potássio'},
+        {nome: 'magnésio'},
+        {nome: 'cálcio'},
+        {nome: 'crômio'},
+        {nome: 'ferro'},
+        {nome: 'cobalto'},
+        {nome: 'níquel'},
+        {nome: 'cobre'},
+        {nome: 'zinco'}
+        ]
+
+        var pergunta = [
+            '???',
+            '???',
+            '???',
+            '???'
+        ]
+            function radom(){
+                element1 = Math.floor(elementos.length * Math.random());
+                element2 = Math.floor(elementos.length * Math.random());
+                if (element1 == element2){
+                    radom()
+                }
+            }
+            function ver1() {
+                if(vusu1 == true){   
+                }else {
+                    vusu1 = true
+                    vendoelemento.style.display = "block"
+                    bt1.style.backgroundColor = '#D1F5F1'
+                    teladeescolha.style.display = "none"
+                    elem.innerHTML = `Seu Elemento e ${elementos[element1].nome}`
+                    elemnome.innerHTML = elementos[element1].nome
+                }
+            }
+            function ver2() {
+                if(vusu2 == true){
+                }else {
+                    vusu2 = true
+                    vendoelemento.style.display = "block"
+                    bt2.style.backgroundColor = '#D1F5F1'
+                    teladeescolha.style.display = "none"
+                    elem.innerHTML = `Seu Elemento e ${elementos[element2].nome}`
+                    elemnome.innerHTML = elementos[element2].nome
+                }
+            }
 
 /*var elementos = [
 'Lítio',
