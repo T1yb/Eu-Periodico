@@ -42,6 +42,9 @@ body {
         background-color: black;
         background-size: 0%;
     }
+    #config {
+        display: none;
+    }
   }
 
 .check {
