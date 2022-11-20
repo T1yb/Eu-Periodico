@@ -6,10 +6,9 @@
     padding: 0px;
 }
 #falha {
-    height: 100vh;
+
     display: none;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
+    
 }
 #falhaimg {
     height: 20vw;
