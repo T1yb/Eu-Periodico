@@ -1,5 +1,5 @@
 // pegar valores
-var jogo = document.getElementById("jogo"), nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv")
+var next =document.getElementById("next"), hj = document.getElementById("perguntaa"),jogo = document.getElementById("jogo"), nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv")
 var config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2")
 var bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
 // troca de pagina
@@ -17,6 +17,7 @@ play.addEventListener('click', ()=> {
     config.style.display = "none"
     teladeescolha.style.display = "block"
     radom()
+    radomp()
 })
 
 //codigo 
@@ -24,6 +25,7 @@ play.addEventListener('click', ()=> {
     // pagina de ver o elemento
     var elem = document.getElementById("elem"),elemnome = document.getElementById("elemnome")
     var vusu1 = false,vusu2 = false
+    var turno = 0
     var elementos = [
         {nome: 'Lítio'},
         {nome: 'sódio'},
@@ -39,18 +41,21 @@ play.addEventListener('click', ()=> {
         ]
 
         var perguntas = [
-            '???',
-            '???',
-            '???',
-            '???'
+            'Quantos eletrons voce tem?',
+            'voce e um metal?',
+            'voce e um nao metal?',
+            'voce e do grupo 1?'
         ]
             function radom(){
                 element1 = Math.floor(elementos.length * Math.random());
                 element2 = Math.floor(elementos.length * Math.random());
-                perguntan = Math.floor(perguntas.length * Math.random());
+
                 if (element1 == element2){
                     radom()
                 }
+            }
+            function radomp() {
+                perguntan = Math.floor(perguntas.length * Math.random());
             }
             function ver1() {
                 if(vusu1 == true){   
@@ -84,11 +89,22 @@ play.addEventListener('click', ()=> {
                 if(vusu1 == true & vusu2 == true) {
                     vendoelemento.style.display = "none"  
                     jogo.style.display = 'block'
+                    hj.innerText = perguntas[perguntan]
+                    turno = turno + 1
                 }else {
                 teladeescolha.style.display = "block"
                 vendoelemento.style.display = "none"                    
                 }
 
+            })
+            next.addEventListener('click', ()=> {
+                if (turno == 10) {
+                    alert("foiiiii")
+                }else {
+                turno = turno + 1
+                radomp()
+                hj.innerText = perguntas[perguntan]
+                }
             })
             playgame.addEventListener('click', ()=> {
                 if(vusu1 == true & vusu2 == true) {
