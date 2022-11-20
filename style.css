@@ -18,11 +18,12 @@ margin-right: auto;
 display: block;
 text-align: center;
 padding: 10px;
-font-size: 30px;
+font-size: 20px;
 border-radius: 500px;
 font-family: 'Montserrat', sans-serif;
 text-transform: uppercase;
 width: 250px;
+height: 3vh;
 }
 #tunon {
     padding-right: 20px;
@@ -140,6 +141,7 @@ margin-left: 2%;
     margin-left: auto;
     margin-right: auto;
 }
+
 #vendo-elemento {
     display: none;
 }
@@ -177,7 +179,7 @@ margin-left: 2%;
     width: 50%;  
     display: inline-block;
 }
-#pergunta {
+#perguntaa {
     text-align: center;
     font-size: 1.2cm;
      font-family: 'Montserrat', sans-serif;

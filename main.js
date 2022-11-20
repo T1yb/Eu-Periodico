@@ -1,5 +1,7 @@
 // pegar valores
-var nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv"),config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2"),bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
+var jogo = document.getElementById("jogo"), nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv")
+var config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2")
+var bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
 // troca de pagina
 play.addEventListener('click', ()=> {
     var vermelhop= document.getElementById("vermelho"),azulp= document.getElementById("azul")
@@ -16,16 +18,7 @@ play.addEventListener('click', ()=> {
     teladeescolha.style.display = "block"
     radom()
 })
-bt1.addEventListener('click', ()=> {
-    ver1()
-})
-bt2.addEventListener('click', ()=> {
-    ver2()
-})
-voltar.addEventListener('click', ()=> {
-    teladeescolha.style.display = "block"
-    vendoelemento.style.display = "none"
-})
+
 //codigo 
 
     // pagina de ver o elemento
@@ -45,7 +38,7 @@ voltar.addEventListener('click', ()=> {
         {nome: 'zinco'}
         ]
 
-        var pergunta = [
+        var perguntas = [
             '???',
             '???',
             '???',
@@ -54,6 +47,7 @@ voltar.addEventListener('click', ()=> {
             function radom(){
                 element1 = Math.floor(elementos.length * Math.random());
                 element2 = Math.floor(elementos.length * Math.random());
+                perguntan = Math.floor(perguntas.length * Math.random());
                 if (element1 == element2){
                     radom()
                 }
@@ -80,6 +74,30 @@ voltar.addEventListener('click', ()=> {
                     elemnome.innerHTML = elementos[element2].nome
                 }
             }
+            bt1.addEventListener('click', ()=> {
+                ver1()
+            })
+            bt2.addEventListener('click', ()=> {
+                ver2()
+            })
+            voltar.addEventListener('click', ()=> {
+                if(vusu1 == true & vusu2 == true) {
+                    vendoelemento.style.display = "none"  
+                    jogo.style.display = 'block'
+                }else {
+                teladeescolha.style.display = "block"
+                vendoelemento.style.display = "none"                    
+                }
+
+            })
+            playgame.addEventListener('click', ()=> {
+                if(vusu1 == true & vusu2 == true) {
+                    teladeescolha.style.display = "none"
+                    jogo.style.display = 'block'
+                }
+            })
+// jogo 
+
 
 /*var elementos = [
 'Lítio',
