@@ -99,7 +99,7 @@ play.addEventListener('click', ()=> {
                 }
 
             })
-            var vez = "azul"
+            var vez = "vermelho"
             next.addEventListener('click', ()=> {
                 if (turno == 20) {
                     alert("foiiiii")
