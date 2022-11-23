@@ -1,11 +1,12 @@
 // pegar valores
-var next =document.getElementById("next"), hj = document.getElementById("perguntaa"),jogo = document.getElementById("jogo"), nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv")
+var body = document.getElementById("body"),next =document.getElementById("next"), hj = document.getElementById("perguntaa"),jogo = document.getElementById("jogo"), nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv")
 var config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2")
-var bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play")
+var bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play"),area = document.getElementById("are")
 // troca de pagina
 play.addEventListener('click', ()=> {
-    var vermelhop= document.getElementById("vermelho"),azulp= document.getElementById("azul")
-    var vermelho = vermelhop.value,azul= azulp.value
+    var vermelhop= document.getElementById("vermelho"),azulp= document.getElementById("azul"),turnop = document.getElementById("tunon")
+    var vermelho = vermelhop.value,azul= azulp.value,turnoi = turnop.value
+    console.log(turnoi)
     if (vermelho == "") {
     }else {
         nometv.innerHTML = `${vermelho}`
@@ -89,6 +90,7 @@ play.addEventListener('click', ()=> {
                 if(vusu1 == true & vusu2 == true) {
                     vendoelemento.style.display = "none"  
                     jogo.style.display = 'block'
+                    body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
                     hj.innerText = perguntas[perguntan]
                     turno = turno + 1
                 }else {
@@ -97,21 +99,31 @@ play.addEventListener('click', ()=> {
                 }
 
             })
+            var vez = "azul"
             next.addEventListener('click', ()=> {
-                if (turno == 10) {
+                if (turno == 20) {
                     alert("foiiiii")
                 }else {
+                    if(vez == "azul"){
+                        body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
+                        area.style.backgroundColor = "#4d71ffce"
+                        vez = "vermelho"
+                        prox()
+                    }else {
+                        body.style.backgroundImage = "url(imgs/fundo_vermelho.jpg)"
+                        vez = "azul"
+                        area.style.backgroundColor = "rgb(255 0 0 / 53%)"
+                        prox()
+                    }
+                }
+            })
+            function prox(){
                 turno = turno + 1
                 radomp()
                 hj.innerText = perguntas[perguntan]
-                }
-            })
-            playgame.addEventListener('click', ()=> {
-                if(vusu1 == true & vusu2 == true) {
-                    teladeescolha.style.display = "none"
-                    jogo.style.display = 'block'
-                }
-            })
+            }
+
+
 // jogo 
 
 
