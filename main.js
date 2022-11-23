@@ -90,7 +90,8 @@ play.addEventListener('click', ()=> {
                 if(vusu1 == true & vusu2 == true) {
                     vendoelemento.style.display = "none"  
                     jogo.style.display = 'block'
-                    body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
+                    body.style.backgroundColor = "white"
+                    body.style.backgroundSizesize = '0%'
                     hj.innerText = perguntas[perguntan]
                     turno = turno + 1
                 }else {
@@ -105,12 +106,12 @@ play.addEventListener('click', ()=> {
                     alert("foiiiii")
                 }else {
                     if(vez == "azul"){
-                        body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
+        
                         area.style.backgroundColor = "#4d71ffce"
                         vez = "vermelho"
                         prox()
                     }else {
-                        body.style.backgroundImage = "url(imgs/fundo_vermelho.jpg)"
+
                         vez = "azul"
                         area.style.backgroundColor = "rgb(255 0 0 / 53%)"
                         prox()
