@@ -2,11 +2,12 @@
 var body = document.getElementById("body"),next =document.getElementById("next"), hj = document.getElementById("perguntaa"),jogo = document.getElementById("jogo"), nometa = document.getElementById("nometa"),nometv = document.getElementById("nometv")
 var config = document.getElementById("config"),voltar = document.getElementById("voltar"), vendoelemento = document.getElementById("vendo-elemento"),bt2 = document.getElementById("bt2")
 var bt1 = document.getElementById("bt1"),teladeescolha = document.getElementById("tela-de-escolha"),play = document.getElementById("play"),area = document.getElementById("are")
+var chute = document.getElementById("chute"),proxch = document.getElementById("proxch"),chutbb = document.getElementById("chutbb"),vito =document.getElementById("vitoriap")
+var menub = document.getElementById("menub")
 // troca de pagina
 play.addEventListener('click', ()=> {
     var vermelhop= document.getElementById("vermelho"),azulp= document.getElementById("azul"),turnop = document.getElementById("tunon")
-    var vermelho = vermelhop.value,azul= azulp.value,turnoi = turnop.value
-    console.log(turnoi)
+    var vermelho = vermelhop.value,azul= azulp.value
     if (vermelho == "") {
     }else {
         nometv.innerHTML = `${vermelho}`
@@ -26,26 +27,119 @@ play.addEventListener('click', ()=> {
     // pagina de ver o elemento
     var elem = document.getElementById("elem"),elemnome = document.getElementById("elemnome")
     var vusu1 = false,vusu2 = false
-    var turno = 0
     var elementos = [
-        {nome: 'Lítio'},
-        {nome: 'sódio'},
-        {nome: 'potássio'},
-        {nome: 'magnésio'},
-        {nome: 'cálcio'},
-        {nome: 'crômio'},
-        {nome: 'ferro'},
-        {nome: 'cobalto'},
-        {nome: 'níquel'},
-        {nome: 'cobre'},
-        {nome: 'zinco'}
+        {nome: 'Lítio' , sigla: 'Li'},
+        {nome: 'Sódio', sigla: 'Na'},
+        {nome: 'Hidrogenio', sigla: 'H'},
+        {nome: 'Berilio', sigla: 'Be'},
+        {nome: 'Magnésio', sigla: 'Mg'},
+        {nome: 'potássio', sigla: 'K'},
+        {nome: 'Cálcio', sigla: 'Ca'},
+        {nome: 'Rubídio', sigla: 'Rb'},
+        {nome: 'Estrôncio', sigla: 'Sr'},
+        {nome: 'Césio', sigla: 'Cs'},
+        {nome: 'Bário', sigla: 'Ba'},
+        {nome: 'Frâncio', sigla: 'Fr'},
+        {nome: 'Rádio', sigla: 'Ra'},
+        {nome: 'Escândio', sigla: 'Sc'},
+        {nome: 'Titânio', sigla: 'Ti'},
+        {nome: 'Ítrio', sigla: 'Y'},
+        {nome: 'Zircônio', sigla: 'Zr'},
+        {nome: 'Háfnio', sigla: 'Hf'},
+        {nome: 'Vanárdio', sigla: 'V'},
+        {nome: 'Nióbio', sigla: 'Nb'},
+        {nome: 'Tântalo', sigla: 'Ta'},
+        {nome: 'Crômio', sigla: 'Cr'},
+        {nome: 'Molibdênio', sigla: 'Mo'},
+        {nome: 'Tungstênio', sigla: 'W'},
+        {nome: 'Manganês', sigla: 'Mn'},
+        {nome: 'Rênio', sigla: 'Re'},
+        {nome: 'Ferro', sigla: 'Fe'},
+        {nome: 'Rutênio', sigla: 'Ru'},
+        {nome: 'Ósmio', sigla: 'Os'},
+        {nome: 'Cobalto', sigla: 'Co'},
+        {nome: 'Ródio', sigla: 'Rh'},
+        {nome: 'Irídio', sigla: 'Ir'},
+        {nome: 'Níquel', sigla: 'Ni'},
+        {nome: 'Paládio', sigla: 'Pd'},
+        {nome: 'Platina', sigla: 'Pt'},
+        {nome: 'Cobre', sigla: 'Cu'},
+        {nome: 'Prata', sigla: 'Ag'},
+        {nome: 'Ouro', sigla: 'Au'},
+        {nome: 'Zinco', sigla: 'Zn'},
+        {nome: 'Cádmio', sigla: 'Cd'},
+        {nome: 'Mercúrio', sigla: 'Hg'},
+        {nome: 'Boro', sigla: 'B'},
+        {nome: 'Alumínio', sigla: 'Ai'},
+        {nome: 'Gálio', sigla: 'Ga'},
+        {nome: 'Índio', sigla: 'In'},
+        {nome: 'Tálio', sigla: 'Tl'},
+        {nome: 'Carbono', sigla: 'C'},
+        {nome: 'Silício', sigla: 'Si'},
+        {nome: 'Germânio', sigla: 'Ge'},
+        {nome: 'Estanho', sigla: 'Sn'},
+        {nome: 'Chumbo', sigla: 'Pb'},
+        {nome: 'Nitrogênio', sigla: 'N'},
+        {nome: 'Fósforo', sigla: 'P'},
+        {nome: 'Arsênio', sigla: 'As'},
+        {nome: 'Antimônio', sigla: 'Sb'},
+        {nome: 'Bismuto', sigla: 'Bi'},
+        {nome: 'Oxigênio', sigla: 'O'},
+        {nome: 'Enxofre', sigla: 'S'},
+        {nome: 'Selênio', sigla: 'S'},
+        {nome: 'Telúrio', sigla: 'Te'},
+        {nome: 'Polônio', sigla: 'Po'},
+        {nome: 'Flúor', sigla: 'F'},
+        {nome: 'Cloro', sigla: 'Cl'},
+        {nome: 'Bromo', sigla: 'Br'},
+        {nome: 'Iodo', sigla: 'I'},
+        {nome: 'Astato', sigla: 'At'},
+        {nome: 'Hélio', sigla: 'He'},
+        {nome: 'Neônio', sigla: 'Ne'},
+        {nome: 'argônio', sigla: 'Ar'},
+        {nome: 'Criptônio', sigla: 'Kr'},
+        {nome: 'Xenônio', sigla: 'xe'},
+        {nome: 'Radônio', sigla: 'rn'},
+        {nome: 'Lantânio', sigla: 'la'},
+        {nome: 'Cério', sigla: 'ce'},
+        {nome: 'Praseodímio', sigla: 'pr'},
+        {nome: 'Neodímio', sigla: 'nd'},
+        {nome: 'Samário', sigla: 'sm'},
+        {nome: 'Eurómio', sigla: 'eu'},
+        {nome: 'Gadolínio', sigla: 'gd'},
+        {nome: 'Térbio', sigla: 'tb'},
+        {nome: 'Disprósio', sigla: 'dy'},
+        {nome: 'Hólmio', sigla: 'ho'},
+        {nome: 'Érbio', sigla: 'er'},
+        {nome: 'Túlio', sigla: 'tm'},
+        {nome: 'Itérbio', sigla: 'yb'},
+        {nome: 'Luténcio', sigla: 'lu'},
+        {nome: 'Actinio', sigla: 'ac'},
+        {nome: 'Tório', sigla: 'th'},
+        {nome: 'Protactínio', sigla: 'pa'},
+        {nome: 'Urãnio', sigla: 'u'},
         ]
 
         var perguntas = [
-            'Quantos eletrons voce tem?',
-            'voce e um metal?',
-            'voce e um nao metal?',
-            'voce e do grupo 1?'
+            'voce e dos metais?',
+            'voce e um dos nao-metais?',
+            'voce e um dos semimetais?',
+            'voce e um dos outros nao-metais?',
+            'voce e um dos halogenios?',
+            'voce e um dos gases nobres?',
+            'voce e um dos metais alcalinos-terrosos?',
+            'voce e um dos lantanoides?',
+            'eu te encontro no meu dia a dia?',
+            'tem vogal no seu simbolo?',
+            'voce e um dos actinoides?',
+            "voce esta entre 15 e 18?",
+            "voce esta entre 10 e 14?",
+            "voce esta entre 7 e 9?",
+            "voce tem mais de 50 atomos?",
+            "voce esta entre 4 e 6?",
+            "voce esta entre 1 e 3?",
+            'voce e um dos metais de transiçao?',
+            'voce e um dos metais de pos transiçao?',
         ]
             function radom(){
                 element1 = Math.floor(elementos.length * Math.random());
@@ -92,7 +186,7 @@ play.addEventListener('click', ()=> {
                     jogo.style.display = 'block'
                     body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
                     hj.innerText = perguntas[perguntan]
-                    turno = turno + 1
+                
                 }else {
                 teladeescolha.style.display = "block"
                 vendoelemento.style.display = "none"                    
@@ -101,144 +195,59 @@ play.addEventListener('click', ()=> {
             })
             var vez = "vermelho"
             next.addEventListener('click', ()=> {
-                if (turno == 20) {
-                    alert("foiiiii")
+                pro()
+            })
+            menub.addEventListener('click', ()=> {
+               location.reload()
+            })
+            proxch.addEventListener('click', ()=> {
+                var chvv = document.getElementById("ccv"),chzz = document.getElementById("ccz")
+                var chv = chvv.value,chz = chzz.value
+                console.log(elementos[element1].sigla)
+                console.log(elementos[element2].sigla)
+                if (chv == elementos[element1].sigla){
+                    vito.style.display = "block" 
+                    chute.style.display = 'none'
+                    body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
+                }else if (chz == elementos[element2].sigla){
+                    vito.style.display = "block" 
+                    chute.style.display = 'none'
+                    body.style.backgroundImage = "url(imgs/fundo_vermelho.jpg)"
                 }else {
+                 chute.style.display = "none" 
+                jogo.style.display = 'block'
+                pro()  
+                }
+
+            })
+            chutbb.addEventListener('click', ()=> {
+                chut()
+            })
+            function chut () {
+                chute.style.display = "block" 
+                body.style.backgroundImage = "url(imgs/fundoo.png)"
+                jogo.style.display = 'none'
+            }
+            function pro() {
+                
                     if(vez == "azul"){
                         body.style.backgroundImage = "url(imgs/fundo_azul.jpg)"
+                        radomp()
                         area.style.backgroundColor = "#4d71ffce"
+                        hj.innerText = perguntas[perguntan]
                         vez = "vermelho"
                         prox()
                     }else {
                         body.style.backgroundImage = "url(imgs/fundo_vermelho.jpg)"
                         vez = "azul"
+                        radomp()
+                        hj.innerText = perguntas[perguntan]
                         area.style.backgroundColor = "rgb(255 0 0 / 80%)"
                         prox()
                     }
                 }
-            })
+    
             function prox(){
-                turno = turno + 1
                 radomp()
                 hj.innerText = perguntas[perguntan]
             }
-
-
-// jogo 
-
-
-/*var elementos = [
-'Lítio',
-'sódio',
-'potássio',
-'magnésio',
-'cálcio',
-'crômio',
-'ferro',
-'cobalto',
-'níquel',
-'cobre',
-'zinco'
-]
-
-var pergunta = [
-    '???',
-    '???',
-    '???',
-    '???'
-]
-function radom(){
-    element1 = Math.floor(elementos.length * Math.random());
-    element2 = Math.floor(elementos.length * Math.random());
-    if (element1 == element2){
-        radom()
-    }
-}
-var rodada = 1,rodj = 0
-var bt1 = document.getElementById('bt1'),bt2 = document.getElementById('bt2'),ag = document.getElementById('ag')
-var titulo = document.getElementById('titulo'),back = document.getElementById('back'),nx = document.getElementById('nx')
-var vusu1 = false,vusu2 = false
-var fundo = document.getElementById('fundo')
-radom()
-setTimeout(function(){
-    bt1.style.display = 'inline-block'
-    bt2.style.display = 'inline-block'
-    ag.style.display = 'none'
-    titulo.style.display = 'block'
-},5000);
-bt1.addEventListener('click',()=>{
-    if(vusu1 == true){
-        bt1.style.backgroundColor = '#D1F5F1'
-    }else {
-    vusu1 = true
-    bt1.style.display = 'none'
-    bt2.style.display = 'none'
-    fundo.style.backgroundColor = '#FF001B'
-    back.style.display = 'block'
-    titulo.style.display = 'block'
-    titulo.innerHTML = `Seu elemento e ${elementos[element1]}`
-}
-})
-bt2.addEventListener('click',()=>{
-    if(vusu2 == true){
-        bt2.style.backgroundColor = '#D1F5F1'
-    }else {
-    vusu2 = true
-    bt1.style.display = 'none'
-    bt2.style.display = 'none'
-    fundo.style.backgroundColor = '#4D70FF'
-    back.style.display = 'block'
-    titulo.style.display = 'block'
-    titulo.innerHTML = `Seu elemento e ${elementos[element2]}`
-    }
-})
-back.addEventListener('click',()=>{
-    if(vusu1 == true & vusu2 == true) {
-        bt1.style.display = 'none'
-        bt2.style.display = 'none'
-        back.style.display = 'none'
-        nx.style.display = 'block'
-        play()
-    }else{
-    bt1.style.display = 'inline-block'
-    bt2.style.display = 'inline-block'
-    titulo.innerHTML = 'Qual e seu lado?'
-    back.style.display = 'none'
-    if(vusu2 == true){
-        bt2.style.backgroundColor = '#D1F5F1'
-    }
-    if(vusu1 == true){
-        bt1.style.backgroundColor = '#D1F5F1'
-    }
-    }
-})
-nx.addEventListener('click',()=>{
-    play()
-})
-function play() {
-    if (rodj == 20){
-        var resposta = prompt("qual elemento ele e?")
-        if (resposta == element1){
-            alert("acertou!!!")
-        }else if (resposta == element2){
-            alert("acertou!!!")
-        }else {
-            alert("voce errou!!!")
-        }
-    }else {
-        rodj = rodj + 1
-        console.log(rodj)
-        if (rodada == 1){
-            rodada = 2
-            fundo.style.backgroundColor = '#FF001B'
-            perguntan = Math.floor(pergunta.length * Math.random());
-            titulo.innerHTML = `${pergunta[perguntan]}`
-        }else if (rodada == 2){
-            rodada = 1
-            fundo.style.backgroundColor = '#4D70FF'
-            perguntan = Math.floor(pergunta.length * Math.random());
-            titulo.innerHTML = `${pergunta[perguntan]}`
-        }
-    }
-}
-*/
